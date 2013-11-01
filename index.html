@@ -6344,12 +6344,34 @@
 		</div>
 	</div>
 
-<script src="js/libs/jquery/jquery.min.js"></script>
+<script src="js/libs/jquery/jquery.js"></script>
 <script src="js/libs/jquery-readingtime/jquery.readingTime.js"></script>
+<script src="js/libs/jquery-throttle-debounce/jquery.ba-throttle-debounce.min.js"></script>
+<script src="js/userConsole.js"></script>
 <script>
-  $(document).ready(function(){
-    $('.book').readingTime();
-  });
+	jQuery(function( $ ) {
+		$('.book').readingTime();
+
+		// update on scroll
+		$(window).on('scroll', $.throttle( 500, function() {
+			var page_y = $('body')[0].scrollTop;
+			localStorage['page_y'] = page_y;
+			console.log('Updating to be ' + page_y);
+		}));
+
+		// pull on load
+		if (localStorage['page_y']) {
+			// Allow hash tags to override scroll position (?)
+			if ( window.location.href.indexOf('#') == -1 ) {
+				// @todo: Animate scroll
+				// @todo: Instead of scrollTop, can we do percentage of page so
+				// we get some compatibility for different browser widths?
+				$('body')[0].scrollTop = localStorage['page_y'];
+				userConsole.log('Welcome back! Scrolling to remembered scroll position.');
+			}
+		}
+	
+	});
 </script>
 </body>
 </html>
