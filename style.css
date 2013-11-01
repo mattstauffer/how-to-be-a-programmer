@@ -1,0 +1,65 @@
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+body {
+	background: #eef5f5;
+	color: #334444;
+	font-family: "Georgia", serif;
+	font-size: 16px;
+	line-height: 1.75;
+}
+@media only screen and (min-width: 800px) {
+	body {
+		font-size: 18px;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Helvetica, Arial, sans-serif;
+	line-height: 1.25;
+	text-transform: uppercase;
+}
+
+hr {
+	background: #aaa;
+	border: 0;
+	height: 1px;
+}
+
+.book {
+	background: #fff;
+	margin: 0 auto;
+	max-width: 55em;
+	padding: 1em 1em;
+}
+	.book > div {
+		border-top: 2em solid #444;
+		margin-top: 3em;
+	}
+
+@media only screen and (min-width: 400px) {
+	.book {
+		padding-left: 2em;
+		padding-right: 2em;
+		width: 90%;
+	}
+}
+
+@media only screen and (min-width: 800px) {
+	.book {
+		padding: 2em 9em;
+	}
+}
+
+.title {
+	font-weight: normal;
+}
+	h2.title {
+		border-left: 1.5em solid rgb(13, 146, 104);
+		margin-left: -2em;
+		padding-left: .5em;
+	}
+.author {
+	font-style: italic;
+}

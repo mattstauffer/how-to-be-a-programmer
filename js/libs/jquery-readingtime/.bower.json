@@ -1,0 +1,13 @@
+{
+  "name": "jquery-readingtime",
+  "homepage": "https://github.com/themeskult/jquery-reading-time",
+  "_release": "3b7ee18a8f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "3b7ee18a8f71234a708adc52e88b5024fb3f92f1"
+  },
+  "_source": "git://github.com/themeskult/jquery-reading-time.git",
+  "_target": "*",
+  "_originalSource": "themeskult/jquery-reading-time"
+}
